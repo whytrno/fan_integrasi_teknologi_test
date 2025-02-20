@@ -1,0 +1,33 @@
+function wordCounter(sentence){
+    const kata = sentence.split(" ")
+
+    const regexPattern = /[^A-Za-z0-9,.?-]/;
+
+    let totalValidWord = 0
+
+    kata.forEach((k) => {
+      if(!regexPattern.test(k)) totalValidWord++
+    })
+
+    return totalValidWord
+  }
+
+  console.log(wordCounter("Saat meng*ecat tembok, Agung dib_antu oleh Raihan"))
+
+
+  function sockCounter(inputArray){
+    let count = {};
+    let sock = 0;
+
+    inputArray.forEach(i => {
+      count[i] = count[i] == undefined ? 1 : count[i] + 1
+    });
+
+    for (let key in count) {
+      sock += Math.floor(count[key] / 2);
+    }
+
+    return sock
+  }
+
+  console.log(sockCounter([6, 5, 2, 3, 5, 2, 2, 1, 1, 5, 1, 3, 3, 3, 5]))
